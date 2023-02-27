@@ -20,7 +20,7 @@ module.exports = {
 
     let mess = `               *[ اجمعو هنا لو سمحتم ]*
     
-*Tagged by:* @${m.sender.split("@")[0]}
+*: صاحب المنشن* @${m.sender.split("@")[0]}
     
 *Message:* ${message}\n\n`;
 
