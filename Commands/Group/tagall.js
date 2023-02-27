@@ -2,11 +2,11 @@ require("../../config.js");
 require("../../Core.js");
 
 module.exports = {
-  name: "tagall",
-  alias: ["tag", "all"],
-  desc: "Tag all group member",
-  category: "Group",
-  usage: "tagall",
+  name: "منشن للكل",
+  alias: ["منشن", "الكل"],
+  desc: "منشن جميع اعضاء المجموعه",
+  category:  "مجموعه",
+  usage: "منشن الكل",
   react: "🍁",
   start: async (
     Miku,
@@ -18,7 +18,7 @@ module.exports = {
 
     let message = args ? args.join(' ') :  m.quoted ? m.quoted.msg : 'No Message';
 
-    let mess = `               *『 Attention Here 』*
+    let mess = `               *[ اجمعو هنا لو سمحتم ]*
     
 *Tagged by:* @${m.sender.split("@")[0]}
     
