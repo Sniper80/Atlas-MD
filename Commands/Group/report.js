@@ -1,58 +1,58 @@
-const moment = require('moment-timezone')
+كونست لحظة = تتطلب ('لحظة-التوقيت')
 
-module.exports = {
-    name: "report",
-    alias: ["issue"],
-    desc: "To report an issue to owner",
-    cool:3600,
-    category: "Group",
-    usage: `report <describe issue>`,
-    react: "🍁",
-    start: async (
-      Miku,
+الوحدة.الصادرات = {
+    الاسم: "تقرير",
+    الاسم المستعار: ["العدد"],
+    تنازلي: "للإبلاغ عن مشكلة للمالك",
+    بارد: 3600,
+    الفئة:"مجموعة",
+    استعمال ` ' تقرير < وصف المشكلة>`,
+    رد:"🍁",
+    البداية: غير متزامن (
+      ميكو,
       m,
-      { text, prefix, isBotAdmin, isAdmin, pushName, metadata, args }
+      { نص ، بادئة ، إسبوتادمين ، إيسادمين ، بوشنام ، الفوقية ، أرجس }
     ) => {
-        if(!m.isGroup){
-            if (!args[0]) return m.reply(`Please provide a message to report Developers !`);
-            let userTag = m.sender.split("@")[0];
-            let userMess = args.join(" ");
-            let userName = pushName;
+        إذا (!م. إيسغروب) {
+            إذا (![0]) العودة م. الرد` ' يرجى تقديم رسالة للإبلاغ عن المطورين !`);
+            دعونا علامة المستخدم = م. المرسل.انقسام ( " @") [0];
+            دعونا نستعمل = أرجس.انضم ("");
+            دع اسم المستخدم = اسم الدفع;
 
-            try {
-                userPfp = await Miku.profilePictureUrl(m.sender, "image");
-              } catch (e) {
-                userPfp = botImage3;
+            محاولة {
+                المستخدم = انتظر ميكو.بروفيلبيكتوريورل (م. المرسل، "صورة");
+              } الصيد (ه) {
+                المستخدم = بوتيماج3;
               }
 
-            let reportMessage = `              *「 Report Recieved 」*\n\n*👤 Reported By:* @${userTag}\n\n*📝 Message:* ${userMess}\n\n*📅 Date:* ${moment().tz('Asia/Kolkata').format('DD/MM/YYYY')}\n*⏰ Time:* ${moment().tz('Asia/Kolkata').format('hh:mm:ss A')}\n*🍁 Character using:* ${botName}\n\n*📌 Note: This is an automated message, please do not reply to this message to avoid blocking.*`;
-            m.reply(`Sending report to main developer...\n\nIf it is a spam you might get *blocked* and *banned*.`);
+            اسمحوا reportMessage = ` *" التقرير تلقي "*\n\n*👤 ذكرت من قبل:* @${userTag}\n\n*📝 الرسالة:* ${userMess}\n\n*📅 التاريخ:* ${لحظة().tz('Asia/Kolkata').شكل('DD/MM/YYYY')}\n*⏰ الوقت:* ${لحظة().tz('Asia/Kolkata').شكل('hh:mm:ss A')}\n*🍁 حرف باستخدام:* ${اسم بوت}\n\n*📌 ملاحظة: هذه رسالة تلقائية, الرجاء عدم الرد على هذه الرسالة لتجنب عرقلة.*`;
+            م. الرد` ' إرسال التقرير إلى المطور الرئيسي...\ ن \ الجبهة القومية الإسلامية بل هو البريد المزعج قد تحصل * منعت * و * المحظورة*.`);
             
-            let devs = [`918101187835@s.whatsapp.net`,`923045204414@s.whatsapp.net`,`918515848233@s.whatsapp.net`]
+            دعونا المشروعات الإنمائية = [`918101187835@s.whatsapp.net`,`923045204414@s.whatsapp.net`,`918515848233@s.whatsapp.net`]
 
-            for (let i = 0; i < devs.length; i++) {
-              await Miku.sendMessage(devs[i],{image: {url: userPfp}, caption: reportMessage,mentions: [m.sender],});
+            ل (اسمحوا لي = 0; أنا < المشروعات الإنمائية.الطول ؛ أنا {) {
+              انتظر ميكو.سيندمسيج (ديفس [أنا] ، {صورة: {ورل: وسيربف} ، شرح: ريبورتمسيج ، يذكر: [م. المرسل]،});
             }
         }
-        else{
-            if (!args[0]) return m.reply(`Please provide a message to report Developers !`);
-            let userTag = m.sender.split("@")[0];
-            let userMess = args.join(" ");
-            let userName = pushName;
-            let gcName = metadata.subject;
+        آخر{
+            إذا (![0]) العودة م. الرد` ' يرجى تقديم رسالة للإبلاغ عن المطورين !`);
+            دعونا علامة المستخدم = م. المرسل.انقسام ( " @") [0];
+            دعونا نستعمل = أرجس.انضم ("");
+            دع اسم المستخدم = اسم الدفع;
+            السماح غنام = البيانات الوصفية.الموضوع;
 
-            try {
-                ppgc = await Miku.profilePictureUrl(m.from, "image");
-              } catch {
-                ppgc = botImage3;
+            محاولة {
+                في انتظار ميكو . بروفيلبيكتوريورل (م. من ، "صورة");
+              } قبض {
+                بجك = بوتيماجي 3;
               }
-              let reportMessage = `              *「 Report Recieved 」*\n\n*👤 Reported By:* @${userTag}\n*🧩 Group Name:* ${gcName}\n\n*📝 Message:* ${userMess}\n\n*📅 Date:* ${moment().tz('Asia/Kolkata').format('DD/MM/YYYY')}\n*⏰ Time:* ${moment().tz('Asia/Kolkata').format('hh:mm:ss A')}\n*🍁 Character using:* ${botName}\n\n*📌 Note: This is an automated message, please do not reply to this message to avoid blocking.*`;
-              m.reply(`Sending report to main developer...\n\nIf it is a spam you might get *blocked* and *banned*.`);
+              اسمحوا reportMessage = ` *" التقرير تلقي "*\n\n*👤 ذكرت من قبل:* @${userTag}\n*🧩 اسم المجموعة:* ${gcName}\n\n*📝 الرسالة:* ${userMess}\n\n*📅 التاريخ:* ${لحظة().tz('Asia/Kolkata').شكل('DD/MM/YYYY')}\n*⏰ الوقت:* ${لحظة().tz('Asia/Kolkata').شكل('hh:mm:ss A')}\n*🍁 حرف باستخدام:* ${اسم بوت}\n\n*📌 ملاحظة: هذه رسالة تلقائية, الرجاء عدم الرد على هذه الرسالة لتجنب عرقلة.*`;
+              م. الرد` ' إرسال التقرير إلى المطور الرئيسي...\ ن \ الجبهة القومية الإسلامية بل هو البريد المزعج قد تحصل * منعت * و * المحظورة*.`);
 
-              let devs = [`918101187835@s.whatsapp.net`,`923045204414@s.whatsapp.net`,`918515848233@s.whatsapp.net`,`918231033230@s.whatsapp.net`]
+              دعونا المشروعات الإنمائية = [`918101187835@s.whatsapp.net`,`923045204414@s.whatsapp.net`,`918515848233@s.whatsapp.net`,`918231033230@s.whatsapp.net`]
 
-              for (let i = 0; i < devs.length; i++) {
-                await Miku.sendMessage(devs[i],{image: {url: ppgc}, caption: reportMessage,mentions: [m.sender],});
+              ل (اسمحوا لي = 0; أنا < المشروعات الإنمائية.الطول ؛ أنا {) {
+                انتظر ميكو.سيندمسيج (ديفس [أنا] ، {صورة: {ورل: بغك} ، شرح: ريبورتميسيج ، يذكر: [م. المرسل]،});
             }
         }
     }
