@@ -6,11 +6,11 @@ const { mk } = require("../../Database/dataschema.js");
 
 
 module.exports = {
-    name: "antilinkgc",
+    name: "منع الروابط",
     alias: ["alinkgc","antilink"],
     desc: "Enable or disable the antilink feature in a group",
     category: "Group",
-    usage: "antilinkgc [on/off]",
+    usage: "منع الروابط [تشغيل/ايقاف]",
     react: "🔒",
     start: async (
       Miku,
@@ -21,7 +21,8 @@ module.exports = {
         return Miku.sendMessage(
           m.from,
           {
-            text: `Bot and *${pushName}* both must be admin in order to use this command !`,
+            text: `Bot and *${pushName}* 
+يجب أن يكون كلاهما مشرفا لاستخدام هذا الأمر !`,
           },
           { quoted: m }
         );
@@ -47,20 +48,21 @@ module.exports = {
           );
           return Miku.sendMessage(
             m.from,
-            { text: `*Successfully activated antilink*` },
+            { text: `*
+تم تفعيل منع الروابط بنجاح*` },
             { quoted: m }
           );
         } else {
           if (checkdata.antilink == "true")
             return Miku.sendMessage(
                 m.from,
-                { text: `*Already activated.*` },
+                { text: `*متفعل بالفعل*` },
                 { quoted: m }
               );
           await mk.updateOne({ id: m.from }, { antilink: "true" });
           return Miku.sendMessage(
             m.from,
-            { text: `*Antilink is enabled in this group*` },
+            { text: `*منع الروابط ممنوع في هذه المجموعه*` },
             { quoted: m }
           );
         }
@@ -81,7 +83,7 @@ module.exports = {
           await mk.updateOne({ id: m.from }, { antilink: "false" });
           return Miku.sendMessage(
             m.from,
-            { text: `*Antilink is disabled in this group*` },
+            { text: `*منع الروابط ممنوع في هذه المجموعه*` },
             { quoted: m }
           );
         }
