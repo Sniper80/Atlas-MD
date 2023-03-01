@@ -2,11 +2,11 @@ require("../../config.js");
 require("../../Core.js");
 
 module.exports = {
-  name: "hidetag",
+  name: "منشن خفي",
   alias: ["htag", "ping"],
   desc: "Tag all group member without @ mention",
   category: "Group",
-  usage: "htag <your message>",
+  usage: "منشن خفي <your message>",
   react: "🍁",
   start: async (
     Miku,
