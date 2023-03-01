@@ -1,9 +1,9 @@
 module.exports = {
-    name: "admins",
-    alias: ["tagadmins" ,"admin"],
-    desc: "Tag all group Admins.",
-    category: "Group",
-    usage: "admins <your message>",
+    name: "مشرفين",
+    alias: ["منشن المشرفين" ,"مشرف"],
+    desc: "منشن جميع مشرفين المجموعه.",
+    category: "مجموعه",
+    usage: "المشرف <your message>",
     react: "🍁",
     start: async (
       Miku,
