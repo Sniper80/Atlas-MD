@@ -3,10 +3,10 @@ const Jimp = require("jimp");
 require("../../Core.js");
 
 module.exports = {
-  name: "setgcname",
+  name: "تعيين اسم المجموعة",
   alias: ["setnamegc", "changegcname","setgroupname","changegroupname"],
-  desc: "Change the group name",
-  category: "Group",
+  desc: "تغيير اسم المجموعه",
+  category: "مجموعه",
   usage: `setgcname <New group name>`,
   react: "🍁",
   start: async (
