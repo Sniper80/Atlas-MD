@@ -1,35 +1,35 @@
-module.exports = {
-  name: "delete",
-  alias: ["del"],
-  desc: "To delete a message",
-  category: "Group",
-  usage: `Tag a message and type *del*`,
-  react: "🍁",
-  start: async (Miku, m, { isAdmin, isBotAdmin, pushName }) => {
-    if (!m.quoted)
-      return Miku.sendMessage(
-        m.from,
-        { text: `Please mention a message to delete !` },
-        { quoted: m }
+الوحدة.الصادرات = {
+  الاسم:"حذف",
+  الاسم المستعار: ["ديل"],
+  تنازلي: "لحذف رسالة",
+  الفئة:"مجموعة",
+  استعمال ` ' علامة رسالة ونوع * ديل * `,
+  رد:"🍁",
+  بداية: أسينك (ميكو ، م ، {إيسادمين ، إيسبوتادمين ، بوشنام}) = > {
+    إذا (!م. نقلت)
+      عودة ميكو.إرسال رسالة(
+        م. من,
+        { نص: 'يرجى ذكر رسالة لحذفها !` },
+        { مقتبس: م }
       );
-    if (!isAdmin && !isBotAdmin)
-      return Miku.sendMessage(
-        m.from,
+    إذا (!إيسادمين&&!إسبوتادمين)
+      عودة ميكو.إرسال رسالة(
+        م. من,
         {
-          text: `Bot and *${pushName}* both must be admin in order to use this command !`,
+          * يجب أن يكون كلاهما مشرفا من أجل استخدام هذا الأمر !`,
         },
-        { quoted: m }
+        { مقتبس: م }
       );
     
-    var { from, fromMe, id } = m.quoted;
+    فار { من ، فروم ، معرف } = م.نقلت;
 
-    const key = {
-      remoteJid: m.from,
-      fromMe: false,
-      id: m.quoted.id,
-      participant: m.quoted.sender,
+    مفتاح كونست = {
+      ريموتيجيد: م. من,
+      فروم: خطأ,
+      المعرف: m.quoted.id,
+      مشارك: م.نقلت.المرسل,
     };
 
-    await Miku.sendMessage(m.from, { delete: key });
+    انتظر ميكو.إرسال رسالة (م. من ، { حذف: مفتاح });
   },
 };
