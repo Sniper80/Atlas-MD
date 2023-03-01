@@ -6,10 +6,10 @@ const { mk } = require("../../Database/dataschema.js");
 
 
 module.exports = {
-    name: "cmd",
-    alias: ["bot","botswitch"],
-    desc: "Enable or disable bot in a group",
-    category: "Group",
+    name: "يأمر",
+    alias: ["بوت","تبديل بوت"],
+    desc: "تمكين أو تعطيل البوت في مجموعة",
+    category: "مجموعه",
     usage: "cmd [on/off]",
     react: "🎀",
     start: async (
@@ -22,7 +22,7 @@ module.exports = {
         return Miku.sendMessage(
           m.from,
           {
-            text: `*${pushName}* must be *Admin* to turn ON/OFF bot !`,
+            text: `*${pushName}* !يجب أن يكون *مشرف* لتشغيل / إيقاف تشغيل البوت,
           },
           { quoted: m }
         );
