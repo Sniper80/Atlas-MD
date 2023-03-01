@@ -2,11 +2,11 @@ require("../../config.js");
 require("../../Core.js");
 
 module.exports = {
-  name: "announce",
+  name: "أعلن",
   alias: ["anounce", "announ"],
   desc: "Tag all group member without @ mention",
   category: "Group",
-  usage: "announce <your message>",
+  usage: "أعلن <your message>",
   react: "🍁",
   start: async (
     Miku,
