@@ -6,11 +6,11 @@ const { mk } = require("../../Database/dataschema.js");
 
 
 module.exports = {
-    name: "chatbotgc",
+    name: "الرد الالي",
     alias: ["autochat","autoreply","chatbotgroup"],
     desc: "Enable or disable the autoreply feature in a group",
     category: "Group",
-    usage: "chatbotgc [on/off]",
+    usage: "الرد الالي [تشغيل/ايقاف]",
     react: "🎀",
     start: async (
       Miku,
@@ -22,7 +22,7 @@ module.exports = {
         return Miku.sendMessage(
           m.from,
           {
-            text: `*${pushName}* must be *Admin* to enable Chatbot !`,
+            text: `*${pushName}* !يجب أن يكون *مشرفا* لتمكين الرد الالي`,
           },
           { quoted: m }
         );
